@@ -1,12 +1,13 @@
-const {size, greet} = require('./utils/utils.js');
+const {greet} = require('./utils/utils.js');
 
-if(size > 3){
-  console.log("Enter valid argument");
-  process.exit(1);
-}
+const {readJournal, writeJournal} = require('./utils/logger.js');
 
 try {
   greet();
+  const path = "./data/journal.txt";
+  writeJournal('Hey!!!!!!!!!!!!', path)
+  readJournal(path);
+
 } catch(error){ 
 
   console.log(`Error type: ${error.name}`)

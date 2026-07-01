@@ -1,7 +1,7 @@
 const size = process.argv.length;
 console.log('greet function loaded');
 const greet = () =>{
-  if(size != 3){
+  if(size < 3){
     throw new Error("Please Enter a valid name");
   }
   const name = process.argv[2];
@@ -12,4 +12,4 @@ const greet = () =>{
   console.log(`Time: ${now.toLocaleTimeString()}`);
 };
 
-module.exports = {greet, size};
+module.exports = {size, greet};
