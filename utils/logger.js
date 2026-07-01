@@ -8,4 +8,8 @@ function readJournal(fileName){
   console.log(fs.readFileSync(fileName,'utf-8'));
 }
 
-module.exports = {writeJournal, readJournal};
+function appendJournal(fileName,message){
+  fs.appendFileSync(fileName,message)
+}
+
+module.exports = {writeJournal, readJournal, appendJournal};
